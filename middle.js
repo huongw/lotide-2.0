@@ -23,12 +23,12 @@ const assertArraysEqual = function(arr1, arr2) {
 };
 
 const middle = function(arr) {
-  const isEven = arr.length % 2 === 0;
-  const middle = arr[Math.floor((arr.length - 1) / 2)];
-
   if (arr.length <= 2) {
     return [];
   }
+  
+  const isEven = arr.length % 2 === 0;
+  const middle = arr[Math.floor((arr.length - 1) / 2)];
 
   if (!isEven) {
     return [middle]
