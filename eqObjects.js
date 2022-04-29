@@ -28,7 +28,7 @@ const eqObjects = function(obj1, obj2) {
     return false;
   }
 
-  let isTrue = false
+  let isTrue = true
 
   for (const key in obj1) {
     if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
@@ -40,27 +40,31 @@ const eqObjects = function(obj1, obj2) {
   }
 
   return isTrue;
-
 }
 
 // const ab = { a: "1", b: "2" };
-// const ba = { b: "2", b: "1" };
+// const ba = { b: "2", a: "1" };
 // console.log(eqObjects(ab, ba)); // => true
 
 // const abc = { a: "1", b: "2", c: "3"};
 // console.log(eqObjects(ab, abc)); // => false
 
-// const cd = { a: "7", b: "5" };
-// const dc = { b: "5", a: "7" };
-// console.log(eqObjects(cd, dc)); // => true
+const result = { a: "1", b: "2", c: [3,2,1]};
+const result2 = { a: "1", b: "2", c: [1,2,34]};
+const result3 = { a: "1", b: "2", c: [1,2,3]};
+console.log(eqObjects(result, result2)); // => false
+
+console.log(assertEqual(eqObjects(result, result2), false)); // => false
+console.log(assertEqual(eqObjects(result2, result3), false)); // => false
 
 // const cde = { a: "4", b: "8", c: "3"};
-// console.log(eqObjects(cde, cd)); // => false
 
-const cd = { c: "1", d: ["2", 3] };
+// const cd = { c: "1", d: ["2", 3] };
 // const dc = { d: ["2", 3], c: "1" };
+// console.log(eqObjects(cde, cd)); // => false
 // console.log(eqArrays(eqObjects(cd, dc), true)); // => true
+// console.log(eqObjects(cd, dc)); // => true
 
-const cd2 = { c: "1", d: ["2", 3] };
-console.log(assertEqual(eqObjects(cd, cd2), true)); // => false
+// const cd2 = { c: "1", d: ["2", 3] };
+// console.log(assertEqual(eqObjects(cd, cd2), true)); // => false
 // console.log(eqObjects(cd, cd2))
