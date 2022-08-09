@@ -20,7 +20,7 @@ const assertArraysEqual = function(actual, expected) {
   } else {
     console.log(`❌ Assertion Failed: ${actual} !== ${expected}`);
   }
-}
+};
 
 const words = ["Hardy Boys", "Elephant in the room", "Love is blind", "Lion in the den", "Octopus on my head"];
 
@@ -31,8 +31,8 @@ const map = (words, callback) => {
     results.push(callback(word));
   }
 
-  return results
-}
+  return results;
+};
 
 const results1 = assertArraysEqual(map(words, word => word[0]), ["H","E","L","L","O"]);
 const results2 = assertArraysEqual(map(words, word => word[0].toLowerCase()), ["h","e","l","l","o"]);
