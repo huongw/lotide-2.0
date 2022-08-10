@@ -16,9 +16,9 @@ const assertArraysEqual = function(actual, expected) {
   const isTrue = eqArrays(actual, expected);
 
   if (isTrue) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
+    return `✅ Assertion Passed: ${actual} === ${expected}`;
   } else {
-    console.log(`❌ Assertion Failed: ${actual} !== ${expected}`);
+    return `❌ Assertion Failed: ${actual} !== ${expected}`;
   }
 };
 
